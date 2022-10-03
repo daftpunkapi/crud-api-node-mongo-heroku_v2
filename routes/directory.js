@@ -66,7 +66,7 @@ router.put("/:id", async (req, res) => {
   });
   
 //   //DELETE BOOK BASED ON ID
-  router.delete("/:id", isAdmin, async (req, res) => {
+  router.delete("/:id", async (req, res) => {
     const comp = await Company.findByIdAndRemove(req.params.id);
     if (!comp) res.status(404).send("Company with id not found");
     res.send("Company deleted");
